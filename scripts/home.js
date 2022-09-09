@@ -1,41 +1,63 @@
-const trianguloButton = document.getElementById("1");
-const retanguloButton = document.getElementById("2");
-const losangoButton = document.getElementById("3");
-const trapezioButton = document.getElementById("4");
+const buttons = [
+    document.getElementById("button_0"),
+    document.getElementById("button_1"),
+    document.getElementById("button_2"),
+    document.getElementById("button_3")
+]
 
-var clicadoId = undefined;
+const forms = [
+    document.getElementById("form_0"),
+    document.getElementById("form_1"),
+    document.getElementById("form_2"),
+]
 
-function onClickTriangulo() {
-    clicadoId = 1;
-    trianguloButton.classList.add("clicado");
-    retanguloButton.classList.remove("clicado");
-    losangoButton.classList.remove("clicado");
-    trapezioButton.classList.remove("clicado");
+const formMapper = {
+    "button_0": 0,
+    "button_1": 0,
+    "button_2": 1,
+    "button_3": 2,
 }
 
-function onClickRetangulo() {
-    clicadoId = 2;
-    trianguloButton.classList.remove("clicado");
-    retanguloButton.classList.add("clicado");
-    losangoButton.classList.remove("clicado");
-    trapezioButton.classList.remove("clicado");
-}
-function onClickLosango() {
-    clicadoId = 3;
-    trianguloButton.classList.remove("clicado");
-    retanguloButton.classList.remove("clicado");
-    losangoButton.classList.add("clicado");
-    trapezioButton.classList.remove("clicado");
-}
-function onClickTrapezio() {
-    clicadoId = 4;
-    trianguloButton.classList.remove("clicado");
-    retanguloButton.classList.remove("clicado");
-    losangoButton.classList.remove("clicado");
-    trapezioButton.classList.add("clicado");
+var clicadoId = undefined
+var formAnterior = undefined;
+
+function ativa(todos, i, classeAtiva) {
+    for (let index = 0; index < todos.length; index++) {
+        const element = todos[index];
+
+        element.classList.remove(classeAtiva);
+    }
+
+    todos[i].classList.add(classeAtiva);
 }
 
-trianguloButton.addEventListener("click", onClickTriangulo)
-retanguloButton.addEventListener("click", onClickRetangulo)
-losangoButton.addEventListener("click", onClickLosango)
-trapezioButton.addEventListener("click", onClickTrapezio)
+function desativa(todos, i, classeDesativa) {
+    for (let index = 0; index < todos.length; index++) {
+        const element = todos[index];
+
+        element.classList.add(classeDesativa);
+    }
+
+    todos[i].classList.remove(classeDesativa)
+}
+
+function onClick(id) {
+    clicadoId = id
+    const formId = formMapper[buttons[id].id]
+
+    ativa(buttons, id, "clicado")
+    desativa(forms, formId, "desativado")
+}
+
+for (let index = 0; index < buttons.length; index++) {
+    const element = buttons[index];
+
+    element.addEventListener("click", function () { onClick(index) })
+}
+
+for (let index = 0; index < forms.length; index++) {
+    const element = forms[index];
+
+    element.classList.add("desativado")
+
+}
