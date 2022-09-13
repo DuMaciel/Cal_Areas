@@ -18,6 +18,8 @@ const formMapper = {
     "button_3": 2,
 }
 
+const resultante = document.getElementById("form_R");
+
 var clicadoId = undefined
 var formAnterior = undefined;
 
@@ -42,6 +44,7 @@ function desativa(todos, i, classeDesativa) {
 }
 
 function onClick(id) {
+    resultante.classList.remove("desativado");
     clicadoId = id
     const formId = formMapper[buttons[id].id]
 
@@ -60,4 +63,45 @@ for (let index = 0; index < forms.length; index++) {
 
     element.classList.add("desativado")
 
+}
+
+
+// Calcular Areas
+const inputs = [
+    document.getElementById("altura"),
+    document.getElementById("base"),
+    document.getElementById("baseMe"),
+    document.getElementById("baseMa"),
+    document.getElementById("diagonalMe"),
+    document.getElementById("diagonalMa"),
+];
+
+const calcular = document.getElementById("button_R");
+
+calcular.addEventListener("click", function () { resultado() });
+
+function resultado() {
+    let retorno = calTriangulo(parseFloat(inputs[0].value), parseFloat(inputs[1].value));
+    document.getElementById("resultado").innerHTML = "Resultado:" + retorno;
+}
+
+
+function calTriangulo(altura, base) {
+    const area = altura * base / 2;
+    return area;
+}
+
+function calRetangulo(altura, base) {
+    const area = altura * base;
+    return area;
+}
+
+function calTrapezio(altura, baseMe, baseMa) {
+    const area = (baseMe + baseMa) * altura / 2;
+    return area;
+}
+
+function calLosango(diagonalMe, diagonalMa) {
+    const area = (baseMe + baseMa) * altura / 2;
+    return area;
 }

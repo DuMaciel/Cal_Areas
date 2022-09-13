@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/home.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="./styles/home.css" />
+  </head>
+  <body>
     <h1>Calculadora de Áreas de Formas Geométricas</h1>
     <p>Escolha uma opção abaixo:</p>
     <div class="opcoes">
-        <button id="button_0">
-            <p>Triângulo</p>
-            <img class="img" src="./images/Triangulo.png" alt="">
-        </button>
-        <button id="button_1">
-            <p>Retângulo</p>
-            <img class="img" src="./images/Retangulo.png" alt="">
-        </button>
-        <button id="button_2">
-            <p>Losango</p>
-            <img class="img" src="./images/Losango.png" alt="">
-        </button>
-        <button id="button_3">
-            <p>Trapézio</p>
-            <img class="img" src="./images/Trapezio.png" alt="">
-        </button>
+      <button id="button_0" class="formas">
+        <p>Triângulo</p>
+        <img class="img" src="./images/Triangulo.png" alt="" />
+      </button>
+      <button id="button_1" class="formas">
+        <p>Retângulo</p>
+        <img class="img" src="./images/Retangulo.png" alt="" />
+      </button>
+      <button id="button_2" class="formas">
+        <p>Losango</p>
+        <img class="img" src="./images/Losango.png" alt="" />
+      </button>
+      <button id="button_3" class="formas">
+        <p>Trapézio</p>
+        <img class="img" src="./images/Trapezio.png" alt="" />
+      </button>
     </div>
     <div id="form_0" class="forms">
-        <p>Altura:</p>
-        <input id="altura" type="number">
-        <p>Base:</p>
-        <input id="base" type="number">
+      <p>Altura:</p>
+      <input id="altura" type="number" />
+      <p>Base:</p>
+      <input id="base" type="number" />
     </div>
     <div id="form_1" class="forms">
-        <p>Altura:</p>
-        <input id="alturaZ" type="number">
-        <p>Base menor:</p>
-        <input id="baseMe" type="number">
-        <p>Base maior:</p>
-        <input id="baseMa" type="number">
+      <p>Altura:</p>
+      <input id="alturaZ" type="number" />
+      <p>Base menor:</p>
+      <input id="baseMe" type="number" />
+      <p>Base maior:</p>
+      <input id="baseMa" type="number" />
     </div>
     <div id="form_2" class="forms">
-        <p>Diagonal menor:</p>
-        <input id="DiagonalMe" type="number">
-        <p>Diagonal maior:</p>
-        <input id="DiagonalMa" type="number">
+      <p>Diagonal menor:</p>
+      <input id="diagonalMe" type="number" />
+      <p>Diagonal maior:</p>
+      <input id="diagonalMa" type="number" />
     </div>
-    <div class="forms">
-        <p>Resultante:</p>
+    <div id="form_R" class="forms resultado desativado">
+      <p id="resultado">Resultado:</p>
+      <button id="button_R" class="calcular">
+        <p>Calcular</p>
+      </button>
     </div>
-
-</body>
-<script type="text/javascript" src="./scripts/home.js"></script>
+  </body>
+  <script type="text/javascript" src="./scripts/home.js"></script>
 </html>
