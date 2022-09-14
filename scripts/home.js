@@ -50,6 +50,9 @@ function onClick(id) {
 
     ativa(buttons, id, "clicado")
     desativa(forms, formId, "desativado")
+
+    zerarInputs();
+    document.getElementById("resultado").innerHTML = "Resultado:";
 }
 
 for (let index = 0; index < buttons.length; index++) {
@@ -70,18 +73,36 @@ for (let index = 0; index < forms.length; index++) {
 const inputs = [
     document.getElementById("altura"),
     document.getElementById("base"),
+    document.getElementById("alturaTra"),
     document.getElementById("baseMe"),
     document.getElementById("baseMa"),
     document.getElementById("diagonalMe"),
     document.getElementById("diagonalMa"),
 ];
 
+function zerarInputs() {
+    let i;
+    for (i = 0; i < inputs.length; i++) {
+        inputs[i].value = '';
+    }
+}
+
 const calcular = document.getElementById("button_R");
 
 calcular.addEventListener("click", function () { resultado() });
 
 function resultado() {
-    let retorno = calTriangulo(parseFloat(inputs[0].value), parseFloat(inputs[1].value));
+    let retorno = "não calculou";
+    if (buttons[0].classList.contains("clicado")) {
+        retorno = calTriangulo(parseFloat(inputs[0].value), parseFloat(inputs[1].value));
+    } else if (buttons[1].classList.contains("clicado")) {
+        retorno = calRetangulo(parseFloat(inputs[0].value), parseFloat(inputs[1].value));
+    } else if (buttons[2].classList.contains("clicado")) {
+        retorno = calTrapezio(parseFloat(inputs[2].value), parseFloat(inputs[3].value), parseFloat(inputs[4].value));
+    } else if (buttons[3].classList.contains("clicado")) {
+        retorno = calLosango(parseFloat(inputs[5].value), parseFloat(inputs[6].value));
+    }
+
     document.getElementById("resultado").innerHTML = "Resultado:" + retorno;
 }
 
@@ -102,6 +123,6 @@ function calTrapezio(altura, baseMe, baseMa) {
 }
 
 function calLosango(diagonalMe, diagonalMa) {
-    const area = (baseMe + baseMa) * altura / 2;
+    const area = diagonalMe * diagonalMa / 2;
     return area;
 }
