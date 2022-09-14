@@ -1,15 +1,15 @@
+// var button = document.createElement('button');
+// button.setAttribute('type', 'button')
+// button.appendChild(document.createTextNode('Seu button'));
+// document.body.appendChild(button);
+
+//pegando elementos
 const buttons = [
     document.getElementById("button_0"),
     document.getElementById("button_1"),
     document.getElementById("button_2"),
     document.getElementById("button_3")
-]
-
-const forms = [
-    document.getElementById("form_0"),
-    document.getElementById("form_1"),
-    document.getElementById("form_2"),
-]
+];
 
 const formMapper = {
     "button_0": 0,
@@ -18,11 +18,32 @@ const formMapper = {
     "button_3": 2,
 }
 
-const resultante = document.getElementById("form_R");
+const forms = [
+    document.getElementById("form_0"),
+    document.getElementById("form_1"),
+    document.getElementById("form_2"),
+];
 
-var clicadoId = undefined
-var formAnterior = undefined;
+const inputs = [
+    document.getElementById("altura"),
+    document.getElementById("base"),
+    document.getElementById("alturaTra"),
+    document.getElementById("baseMe"),
+    document.getElementById("baseMa"),
+    document.getElementById("diagonalMe"),
+    document.getElementById("diagonalMa"),
+];
 
+
+// Escutando
+for (let index = 0; index < buttons.length; index++) {
+    const element = buttons[index];
+
+    element.addEventListener("click", function () { onClick(index) });
+}
+
+
+// Funções de remoção e inclusão de classes
 function ativa(todos, i, classeAtiva) {
     for (let index = 0; index < todos.length; index++) {
         const element = todos[index];
@@ -31,7 +52,7 @@ function ativa(todos, i, classeAtiva) {
     }
 
     todos[i].classList.add(classeAtiva);
-}
+};
 
 function desativa(todos, i, classeDesativa) {
     for (let index = 0; index < todos.length; index++) {
@@ -40,8 +61,10 @@ function desativa(todos, i, classeDesativa) {
         element.classList.add(classeDesativa);
     }
 
-    todos[i].classList.remove(classeDesativa)
-}
+    todos[i].classList.remove(classeDesativa);
+};
+
+const resultante = document.getElementById("form_R");
 
 function onClick(id) {
     resultante.classList.remove("desativado");
@@ -55,30 +78,30 @@ function onClick(id) {
     document.getElementById("resultado").innerHTML = "Resultado:";
 }
 
-for (let index = 0; index < buttons.length; index++) {
-    const element = buttons[index];
-
-    element.addEventListener("click", function () { onClick(index) })
-}
-
-for (let index = 0; index < forms.length; index++) {
-    const element = forms[index];
-
-    element.classList.add("desativado")
-
-}
-
 
 // Calcular Areas
-const inputs = [
-    document.getElementById("altura"),
-    document.getElementById("base"),
-    document.getElementById("alturaTra"),
-    document.getElementById("baseMe"),
-    document.getElementById("baseMa"),
-    document.getElementById("diagonalMe"),
-    document.getElementById("diagonalMa"),
-];
+const ButtonCal = document.getElementById("button_R");
+
+ButtonCal.addEventListener("click", function () { resultado() });
+
+function resultado() {
+    let retorno;
+
+    if (buttons[0].classList.contains("clicado")) {
+        retorno = calTriangulo(parseFloat(inputs[0].value), parseFloat(inputs[1].value));
+
+    } else if (buttons[1].classList.contains("clicado")) {
+        retorno = calRetangulo(parseFloat(inputs[0].value), parseFloat(inputs[1].value));
+
+    } else if (buttons[2].classList.contains("clicado")) {
+        retorno = calTrapezio(parseFloat(inputs[2].value), parseFloat(inputs[3].value), parseFloat(inputs[4].value));
+
+    } else if (buttons[3].classList.contains("clicado")) {
+        retorno = calLosango(parseFloat(inputs[5].value), parseFloat(inputs[6].value));
+    };
+
+    document.getElementById("resultado").innerHTML = "Resultado: " + retorno;
+}
 
 function zerarInputs() {
     let i;
@@ -86,26 +109,6 @@ function zerarInputs() {
         inputs[i].value = '';
     }
 }
-
-const calcular = document.getElementById("button_R");
-
-calcular.addEventListener("click", function () { resultado() });
-
-function resultado() {
-    let retorno = "não calculou";
-    if (buttons[0].classList.contains("clicado")) {
-        retorno = calTriangulo(parseFloat(inputs[0].value), parseFloat(inputs[1].value));
-    } else if (buttons[1].classList.contains("clicado")) {
-        retorno = calRetangulo(parseFloat(inputs[0].value), parseFloat(inputs[1].value));
-    } else if (buttons[2].classList.contains("clicado")) {
-        retorno = calTrapezio(parseFloat(inputs[2].value), parseFloat(inputs[3].value), parseFloat(inputs[4].value));
-    } else if (buttons[3].classList.contains("clicado")) {
-        retorno = calLosango(parseFloat(inputs[5].value), parseFloat(inputs[6].value));
-    }
-
-    document.getElementById("resultado").innerHTML = "Resultado:" + retorno;
-}
-
 
 function calTriangulo(altura, base) {
     const area = altura * base / 2;
