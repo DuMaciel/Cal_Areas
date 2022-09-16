@@ -30,29 +30,93 @@
     </div>
     <div id="form_0" class="forms desativado">
       <p>Altura:</p>
-      <input id="altura" type="number" />
+      <div>
+        <input id="altura" type="number" />
+        <select name="selecao" id="altura_s">
+          <option value="mm">milímetro(mm)</option>
+          <option value="cm">Centímetro(cm)</option>
+          <option selected="selected" value="m">Metro(m)</option>
+          <option value="km">Quilômetro(km)</option>
+        </select>
+      </div>
       <p>Base:</p>
-      <input id="base" type="number" />
+      <div>
+        <input id="base" type="number" />
+        <select name="selecao" id="base_s">
+          <option value="mm">milímetro(mm)</option>
+          <option value="cm">Centímetro(cm)</option>
+          <option selected="selected" value="m">Metro(m)</option>
+          <option value="km">Quilômetro(km)</option>
+        </select>
+      </div>
     </div>
     <div id="form_1" class="forms desativado">
       <p>Altura:</p>
-      <input id="alturaTra" type="number" />
-      <p>Base menor:</p>
-      <input id="baseMe" type="number" />
-      <p>Base maior:</p>
-      <input id="baseMa" type="number" />
+      <div>
+        <input id="alturaTra" type="number" />
+        <select name="selecao" id="alturaTra_s">
+          <option value="mm">milímetro(mm)</option>
+          <option value="cm">Centímetro(cm)</option>
+          <option selected="selected" value="m">Metro(m)</option>
+          <option value="km">Quilômetro(km)</option>
+        </select>
+      </div>
+      <div>
+        <p>Base menor:</p>
+        <input id="baseMe" type="number" />
+        <select name="selecao" id="baseMe_s">
+          <option value="mm">milímetro(mm)</option>
+          <option value="cm">Centímetro(cm)</option>
+          <option selected="selected" value="m">Metro(m)</option>
+          <option value="km">Quilômetro(km)</option>
+        </select>
+      </div>
+      <div>
+        <p>Base maior:</p>
+        <input id="baseMa" type="number" />
+        <select name="selecao" id="baseMa_s">
+          <option value="mm">milímetro(mm)</option>
+          <option value="cm">Centímetro(cm)</option>
+          <option selected="selected" value="m">Metro(m)</option>
+          <option value="km">Quilômetro(km)</option>
+        </select>
+      </div>
     </div>
     <div id="form_2" class="forms desativado">
-      <p>Diagonal menor:</p>
-      <input id="diagonalMe" type="number" />
+      <div>
+        <p>Diagonal menor:</p>
+        <input id="diagonalMe" type="number" />
+        <select name="selecao" id="diagonalMe_s">
+          <option value="mm">milímetro(mm)</option>
+          <option value="cm">Centímetro(cm)</option>
+          <option selected="selected" value="m">Metro(m)</option>
+          <option value="km">Quilômetro(km)</option>
+        </select>
+      </div>
       <p>Diagonal maior:</p>
-      <input id="diagonalMa" type="number" />
+      <div>
+        <input id="diagonalMa" type="number" />
+        <select name="selecao" id="diagonalMa_s">
+          <option value="mm">milímetro(mm)</option>
+          <option value="cm">Centímetro(cm)</option>
+          <option selected="selected" value="m">Metro(m)</option>
+          <option value="km">Quilômetro(km)</option>
+        </select>
+      </div>
     </div>
     <div id="form_R" class="forms resultado desativado">
       <p id="resultado">Resultado:</p>
-      <button id="button_R" class="calcular">
-        <p>Calcular</p>
-      </button>
+      <div>
+        <select name="selecao" id="resultado_s">
+          <option value="mm²">Milímetro Quadrado(mm²)</option>
+          <option value="cm²">Centímetro Quadrado(cm²)</option>
+          <option selected="selected" value="m²">Metro Quadrado(m²)</option>
+          <option value="km²">Quilômetro(km²)</option>
+        </select>
+        <button id="button_R" class="calcular">
+          <p>Calcular</p>
+        </button>
+      </div>
     </div>
   </body>
   <script type="text/javascript" src="./scripts/home.js"></script>
