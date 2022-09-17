@@ -11,7 +11,9 @@ html {
   --blue-medium: #46b2bd;
   --blue-dark: #07818c;
   --grey: #a2bdcf;
-  font-family: Inter, sans-serif;
+  font-family: "Inter", sans-serif;
+  font-size: 900;
+  
 }
 body {
   max-width: 60rem;
@@ -19,6 +21,11 @@ body {
   text-align: center;
   margin: 0 auto;
 }
+
+body .opcoes .formas p {
+  font-family: "Inter", sans-serif;
+}
+
 h1 {
   padding: 2rem 0;
   font-size: 2.5rem;
@@ -26,6 +33,7 @@ h1 {
 p {
   padding: 1rem 0;
   font-size: 1.5rem;
+  
 }
 div.opcoes {
   display: block;
@@ -98,6 +106,8 @@ input {
   border-radius: 0.4rem;
   text-align: center;
   height: 2rem;
+  font-family: "Inter", sans-serif;
+  font-size: 900;
 }
 
 .forms.resultado select {
