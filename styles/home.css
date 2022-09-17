@@ -11,6 +11,7 @@ html {
   --blue-medium: #46b2bd;
   --blue-dark: #07818c;
   --grey: #a2bdcf;
+  font-family: Inter, sans-serif;
 }
 body {
   max-width: 60rem;
@@ -31,6 +32,7 @@ div.opcoes {
   justify-content: space-between;
 }
 button.formas {
+  overflow: hidden;
   border-radius: 0.8rem;
   width: 24rem;
   height: 20rem;
@@ -80,4 +82,25 @@ input {
 }
 .forms.resultado.desativado {
   display: none;
+}
+
+ .forms div {
+  padding-left: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+} 
+
+.forms div select {
+  float: right;
+  background-color: rgb(52, 133, 255);
+  border-radius: 0.4rem;
+  text-align: center;
+  height: 2rem;
+}
+
+.forms.resultado select {
+  height: 4rem;
+  border-radius: 0.8rem;
 }

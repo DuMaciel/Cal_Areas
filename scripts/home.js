@@ -188,3 +188,4 @@ function convertResult(valor, unidade) {
         return valor;
     }
 }
+

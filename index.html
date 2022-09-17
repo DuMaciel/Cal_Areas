@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/home.css" />
   </head>
   <body>
@@ -61,8 +66,9 @@
           <option value="km">Quilômetro(km)</option>
         </select>
       </div>
+      
+      <p>Base menor:</p>
       <div>
-        <p>Base menor:</p>
         <input id="baseMe" type="number" />
         <select name="selecao" id="baseMe_s">
           <option value="mm">milímetro(mm)</option>
@@ -71,8 +77,9 @@
           <option value="km">Quilômetro(km)</option>
         </select>
       </div>
-      <div>
+      
         <p>Base maior:</p>
+        <div>
         <input id="baseMa" type="number" />
         <select name="selecao" id="baseMa_s">
           <option value="mm">milímetro(mm)</option>
@@ -83,8 +90,9 @@
       </div>
     </div>
     <div id="form_2" class="forms desativado">
-      <div>
+      
         <p>Diagonal menor:</p>
+        <div>
         <input id="diagonalMe" type="number" />
         <select name="selecao" id="diagonalMe_s">
           <option value="mm">milímetro(mm)</option>
@@ -108,9 +116,9 @@
       <p id="resultado">Resultado:</p>
       <div>
         <select name="selecao" id="resultado_s">
-          <option value="mm²">Milímetro Quadrado(mm²)</option>
-          <option value="cm²">Centímetro Quadrado(cm²)</option>
-          <option selected="selected" value="m²">Metro Quadrado(m²)</option>
+          <option value="mm²">Milímetro(mm²)</option>
+          <option value="cm²">Centímetro(cm²)</option>
+          <option selected="selected" value="m²">Metro(m²)</option>
           <option value="km²">Quilômetro(km²)</option>
         </select>
         <button id="button_R" class="calcular">
